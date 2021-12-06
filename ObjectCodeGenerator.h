@@ -20,7 +20,7 @@ struct assembly_code {
 };
 
 // Declared all the functions needed corresponding to the Partial Solution given
-void simplified_Rat21F();
+void simplified_Rat21F();//
 void Opt_Decleration_List_v2(); //
 void Declaration_list_v2(); //
 void Declaration_v2(); //
@@ -30,10 +30,10 @@ void Statement_List_v2();//
 void Statement_v2();//
 void Compound_v2();//
 void Assign_v2();//
-void If_v2();
-void Return_v2();
-void Print_v2();
-void Scan_v2();
+void If_v2();//
+void Return_v2(); //
+void Print_v2();//
+void Scan_v2();//
 void While_v2();//
 void Condition_v2();//
 void Relop_v2();//
@@ -43,7 +43,8 @@ void Term_v2();//
 void Term_prime_v2();//
 void Factor_v2();//
 
-
+//The Syntax Analyzer for the Simplified Rat21F language
+//with Object Code Generator
 void simplified_Rat21F(){
 
   token1 = Lexer();
@@ -75,6 +76,7 @@ void simplified_Rat21F(){
 void Opt_Decleration_List_v2(){
   Declaration_list_v2();
 }
+
 void Declaration_list_v2(){
   Declaration_v2();
 
@@ -86,6 +88,7 @@ void Declaration_list_v2(){
     cout << "What was expected was a ';'\n";
   }
 }
+
 void Declaration_v2(){
   Qualifier_v2();
   IDs_v2();
@@ -118,13 +121,22 @@ void IDs_v2(){
 
 void Statement_List_v2(){
   Statement_v2();
+  if (token1.lexeme_word != "#"){
+  Statement_List_v2();
 }
+}
+
 void Statement_v2(){
   token1 = Lexer();
   Compound_v2();
   Assign_v2();
   While_v2();
+  If_v2();
+  Print_v2();
+  Scan_v2();
+  Return_v2();
 }
+
 
 void Compound_v2(){
   if (token1.lexeme_word == "{"){
@@ -153,7 +165,7 @@ void Assign_v2(){
         //cout << "Current token1 value is: " << token1.lexeme_word << "\n";
         if(token1.lexeme_word == ";"){
           cout << "What was read was a semicolon (;)\n";
-          token1 = Lexer();
+          //token1 = Lexer();
         }
         else {
           cout << "What was expected was a semicolon (;)\n";
@@ -254,6 +266,122 @@ void Condition_v2(){
   }
   else {
     cout << "What was expected was a Relational Operator\n";
+  }
+}
+
+void If_v2(){
+  if(token1.lexeme_word == "if"){
+    cout << "What was read in If function was: " << token1.lexeme_word << "\n";
+    token1 = Lexer();
+
+      if(token1.lexeme_word == "("){
+        cout << "What was read was: " << token1.lexeme_word << "\n";
+        token1 = Lexer();
+        Condition_v2();
+
+        if (token1.lexeme_word == ")"){
+          cout << "What was read was: " << token1.lexeme_word << "\n";
+          //token1 = Lexer();
+
+          Statement_v2();
+          //instruction
+          //token1 = Lexer();
+
+          if (token1.lexeme_word == "endif"){
+            cout << "What was read in was: " << token1.lexeme_word << "\n";
+            token1 = Lexer();
+          }
+          else {
+            cout << "What was expected was 'endif'\n";
+          }
+        }
+        else {
+          cout << "What was expected was a ')'\n";
+        }
+      }
+      else {
+        cout << "What was expected was a '('\n";
+      }
+  }
+}
+
+void Print_v2(){
+  if (token1.lexeme_word == "put"){
+    cout << "What was read in Print function was: " << token1.lexeme_word << "\n";
+    token1 = Lexer();
+
+    if(token1.lexeme_word == "("){
+      cout << "What was read was: " << token1.lexeme_word << "\n";
+      token1 = Lexer();
+
+      Expression_v2();
+
+      if(token1.lexeme_word == ")"){
+        cout << "What was read in was )\n";
+        token1 = Lexer();
+
+        if(token1.lexeme_word == ";"){
+          cout << "What was read was: " << token1.lexeme_word << "\n";
+          //token1 = Lexer();
+        }
+        else {
+          cout << "What was expected was ';'\n";
+        }
+      }
+      else {
+        cout << "What was expected was ')'\n";
+      }
+    }
+    else {
+      cout << "What was expected was '('\n";
+    }
+  }
+}
+
+void Scan_v2(){
+  if (token1.lexeme_word == "get"){
+    cout << "What was read in Scan function was: " << token1.lexeme_word << "\n";
+    token1 = Lexer();
+
+    if (token1.lexeme_word == "("){
+      cout << "What was read was: " << token1.lexeme_word << "\n";
+      token1 = Lexer();
+
+      IDs_v2();
+
+      if(token1.lexeme_word == ")"){
+        cout << "What was read was: " << token1.lexeme_word << "\n";
+        token1 = Lexer();
+
+        if(token1.lexeme_word == ";"){
+          cout << "What was read was: " << token1.lexeme_word << "\n";
+          //token1 = Lexer();
+        }
+        else {
+          cout << "What was expected was ';'\n";
+        }
+      }
+      else {
+        cout << "What was expected was ')'\n";
+      }
+    }
+    else {
+      cout << "What was expected was '('\n";
+    }
+  }
+}
+
+void Return_v2(){
+  if(token1.lexeme_word == "return"){
+    cout << "What was read in the Return functon was: " << token1.lexeme_word << "\n";
+    token1 = Lexer();
+
+    Expression_v2();
+    if(token1.lexeme_word == ";"){
+      cout << "What was read was: " << token1.lexeme_word << "\n";
+      //token1 = Lexer();
+    }
+
   }
 }
 
