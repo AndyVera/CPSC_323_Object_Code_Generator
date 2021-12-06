@@ -24,7 +24,7 @@ int main (int argc, const char* argv[]){
 
   //Rat21F();
   simplified_Rat21F();
-  
+
   closing_streams();
-  cout << "\nSyntax Analyzer Done!!!\n";
+  cout << "\nObject Code Generator Done!!!\n";
 }

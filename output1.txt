@@ -1,0 +1,46 @@
+
+----Lexeme: #                 Token: Separator----
+
+----Lexeme: integer           Token: Keyword----
+
+----Lexeme: number1           Token: Identifier----
+
+----Lexeme: ,                 Token: Separator----
+
+----Lexeme: number2           Token: Identifier----
+
+----Lexeme: ,                 Token: Separator----
+
+----Lexeme: number3           Token: Identifier----
+
+----Lexeme: ;                 Token: Separator----
+
+----Lexeme: while             Token: Keyword----
+
+----Lexeme: (                 Token: Separator----
+
+----Lexeme: number1           Token: Identifier----
+
+----Lexeme: +                 Token: Operator----
+
+----Lexeme: number2           Token: Identifier----
+
+----Lexeme: =>                Token: Operator----
+
+----Lexeme: number3           Token: Identifier----
+
+----Lexeme: )                 Token: Separator----
+
+----Lexeme: number3           Token: Identifier----
+
+----Lexeme: =                 Token: Operator----
+
+----Lexeme: number1           Token: Identifier----
+
+----Lexeme: +                 Token: Operator----
+
+----Lexeme: number2           Token: Identifier----
+
+----Lexeme: ;                 Token: Separator----
+
+----Lexeme: #                 Token: Separator----

@@ -1,0 +1,5 @@
+#
+integer number1 , number2 , number3 ;
+while ( number1 + number2 => number3 )
+number3 = number1 + number2 ;
+#
