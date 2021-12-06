@@ -12,6 +12,8 @@ Lexeme token1;
 Lexeme save;
 int addr;
 Lexeme relop;
+int index_num = 0;
+int address_num = 7000;
 
 struct assembly_code {
   int step_num;
@@ -136,7 +138,6 @@ void Statement_v2(){
   Scan_v2();
   Return_v2();
 }
-
 
 void Compound_v2(){
   if (token1.lexeme_word == "{"){
