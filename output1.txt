@@ -1,46 +1,10 @@
-
-----Lexeme: #                 Token: Separator----
-
-----Lexeme: integer           Token: Keyword----
-
-----Lexeme: number1           Token: Identifier----
-
-----Lexeme: ,                 Token: Separator----
-
-----Lexeme: number2           Token: Identifier----
-
-----Lexeme: ,                 Token: Separator----
-
-----Lexeme: number3           Token: Identifier----
-
-----Lexeme: ;                 Token: Separator----
-
-----Lexeme: while             Token: Keyword----
-
-----Lexeme: (                 Token: Separator----
-
-----Lexeme: number1           Token: Identifier----
-
-----Lexeme: +                 Token: Operator----
-
-----Lexeme: number2           Token: Identifier----
-
-----Lexeme: =>                Token: Operator----
-
-----Lexeme: number3           Token: Identifier----
-
-----Lexeme: )                 Token: Separator----
-
-----Lexeme: number3           Token: Identifier----
-
-----Lexeme: =                 Token: Operator----
-
-----Lexeme: number1           Token: Identifier----
-
-----Lexeme: +                 Token: Operator----
-
-----Lexeme: number2           Token: Identifier----
-
-----Lexeme: ;                 Token: Separator----
-
-----Lexeme: #                 Token: Separator----
+-----OBJECT GENERATED CODE-----
+1 LABEL 0
+2 PUSHM 7000
+3 PUSHM 7001
+4 LES 0
+5 JUMPZ 1
+6 PUSHM 7002
+7 PUSHI 7003
+8 ADD 0
+9 POPM 7004

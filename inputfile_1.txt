@@ -1,6 +1,4 @@
 #
 integer number1 , number2 , number3 ;
-get ( number2 , number3 ) ;
-number1 = number2 + number3 ;
-return number1 ;
+while ( i < max ) i = i + 1 ;
 #
