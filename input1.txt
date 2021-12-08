@@ -1,0 +1,11 @@
+#
+integer number1 , number2 , number3 ;
+boolean number4 ;
+integer number5 ;
+number1 = number2 + number3 ;
+while ( number1 + number2 => number3 )
+number3 = number1 + number2 ;
+if ( number3 == number4 )
+number9 = number1 + number3 ;
+endif
+#
